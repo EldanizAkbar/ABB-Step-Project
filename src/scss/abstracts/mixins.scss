@@ -1,0 +1,21 @@
+@mixin customFont(
+  $size,
+  $family,
+  $weight,
+  $lineHeight: null,
+  $color,
+  $style: normal
+) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+
+  @if $lineHeight {
+    line-height: $lineHeight;
+  } @else {
+    line-height: $size;
+  }
+
+  font-style: $style;
+  color: $color;
+}

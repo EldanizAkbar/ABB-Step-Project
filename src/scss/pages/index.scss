@@ -1,3 +1,9 @@
+@import '../abstracts/variables';
+@import '../abstracts/colors';
+@import '../abstracts/mixins';
+
+
 h1{
-    color: blue;
+    @include customFont($fs-82, $ff-secondary, $fw-4, null, $main-color-bolder);
+    
 }

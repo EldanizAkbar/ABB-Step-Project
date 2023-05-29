@@ -130,10 +130,15 @@
   // pricing section responsive designs
   @include responsive(tablet) {
     .pricing-title {
+      padding: 10px;
     
       .subs {
        font-size: $fs-42;
       }
+    }
+
+    .pricing-container{
+      padding: 10px;
     }
   }
 

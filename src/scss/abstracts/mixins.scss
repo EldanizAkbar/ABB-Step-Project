@@ -33,7 +33,7 @@
     @media (min-width: 320px) and (max-width: 480px) {
       @content;
     }
-  } @else if $query == code-example {       // for setting width of code - example
+  } @else if $query == code-example {       // for setting width of code - example image
     @media (min-width: 481px) and (max-width: 768px) {
       @content;
     }

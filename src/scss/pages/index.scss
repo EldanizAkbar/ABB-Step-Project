@@ -1,9 +1,291 @@
-@import '../abstracts/variables';
-@import '../abstracts/colors';
-@import '../abstracts/mixins';
+@import "../abstracts/variables";
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
 
-
-h1{
-    @include customFont($fs-82, $ff-secondary, $fw-4, null, $main-color-bolder);
-    
+.container {
+  max-width: 100%;
+  padding: 10px;
 }
+
+// revolution section designs start here
+.revolution-section {
+  width: 100%;
+  max-width: 870px;
+  margin: auto;
+  text-align: center;
+
+  .main-btn-container {
+    position: relative;
+
+    .main-btn {
+      @include customFont($fs-21, $ff-main, $fw-7, 22px, $white);
+      border-radius: 40px;
+      background-color: $main-color;
+      padding: 23px 61px;
+      border: 1px solid $main-color;
+      transition: all 0.4s;
+      // position: absolute;
+      // top: 0;
+      // left: 40%;
+
+      &:hover {
+        background-color: $white;
+        color: $main-color;
+        cursor: pointer;
+      }
+    }
+    .trial-text {
+      @include customFont($fs-14, $ff-main, $fw-4, 15px, $grey-subtext);
+      margin-top: 20px;
+    }
+  }
+
+  .editor-title-container {
+    margin-top: 66px;
+
+    .editor-title {
+      @include customFont($fs-54, $ff-main, $fw-7, none, $main-color-bolder);
+      text-transform: uppercase;
+      margin-bottom: 35px;
+    }
+    .editor-subtitle {
+      @include customFont(
+        $fs-21,
+        $ff-secondary,
+        $fw-4,
+        32px,
+        $grey-bolder-title
+      );
+      margin-bottom: 15px;
+    }
+  }
+  .github-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    .github-icon {
+      border: 1px solid rgb(219, 219, 219);
+      border-radius: 3px;
+      button {
+        @include customFont($fs-14, $ff-main, $fw-7, none, $black);
+        padding: 5px 8px;
+        border: none;
+        background-color: rgb(240, 240, 240);
+      }
+      .span-btn {
+        @include customFont($fs-14, $ff-main, $fw-7, none, $black);
+        padding: 6px 9px;
+      }
+    }
+  }
+
+  // revolution section responsive designs
+  @include responsive(tablet) {
+    .editor-title-container {
+      .editor-title {
+        font-size: $fs-42;
+      }
+    }
+  }
+
+  @include responsive(mobile) {
+    .editor-title-container {
+      .editor-title {
+        font-size: $fs-26;
+      }
+      .editor-subtitle {
+        font-size: $fs-14;
+        line-height: $fs-21;
+      }
+    }
+
+    .main-btn-container {
+      .main-btn {
+        font-size: $fs-18;
+        line-height: $fs-21;
+        padding: 15px 30px;
+      }
+    }
+  }
+}
+
+// revolution section designs finish here
+
+// feature section designs start here
+
+.feature-section {
+  display: flex;
+  width: 100%;
+  background-color: $grey-bg-editor;
+  margin-top: 70px;
+  padding-top: 100px;
+  padding-bottom: 33px;
+  justify-content: space-between;
+  align-items: start;
+
+  .html-code {
+    text-align: center;
+    width: 100%;
+    display: none;
+    .code {
+      @include customFont($fs-42, $ff-main, $fw-7, 50px, $main-color);
+    }
+  }
+
+  .feature-cards-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+
+    .feature__card {
+      display: flex;
+
+      .feature__card__img {
+        text-align: center;
+        width: 400px;
+      }
+
+      .feature__card__content {
+        .feature__card__title {
+          @include customFont(
+            $fs-16,
+            $ff-main,
+            $fw-4,
+            21px,
+            $grey-bolder-title
+          );
+        }
+        .feature__card__text {
+          @include customFont($fs-14, $ff-main, $fw-4, 21px, $grey-subtext);
+          margin-top: 17px;
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  .code-example-container {
+    .code {
+      @include customFont($fs-48, $ff-main, $fw-7, 50px, $main-color);
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  // revolution section responsive designs
+  @include responsive(desktop) {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    .html-code {
+      display: block;
+      margin-bottom: 50px;
+    }
+    .feature-cards-container {
+      width: 100%;
+      justify-content: center;
+    }
+    .code-example-container {
+      width: 100%;
+      text-align: right;
+      margin-top: 80px;
+      .code {
+        display: none;
+      }
+    }
+  }
+
+  @include responsive(tablet) {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    .html-code {
+      display: block;
+      margin-bottom: 50px;
+    }
+    .feature-cards-container {
+      width: 100%;
+      justify-content: center;
+      padding: 10px;
+      .feature__card {
+        .feature__card__content {
+          .feature__card__text {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .code-example-container {
+      width: 100%;
+      text-align: right;
+      margin-top: 80px;
+      .code {
+        display: none;
+      }
+    }
+  }
+
+  @include responsive(mobile) {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    .html-code {
+      display: block;
+      margin-bottom: 50px;
+      .code {
+        font-size: $fs-32;
+      }
+    }
+    .feature-cards-container {
+      flex-direction: column;
+      padding: 10px;
+      .feature__card {
+        flex-direction: column;
+        align-items: center;
+        .feature__card__content {
+          text-align: center;
+          margin-top: 20px;
+          .feature__card__text {
+            width: 100%;
+          }
+        }
+        .feature__card__img {
+          width: 100%;
+        }
+      }
+    }
+    .code-example-container {
+      width: 100%;
+      text-align: right;
+      margin-top: 80px;
+      .code {
+        display: none;
+      }
+      img {
+        width: 317px;
+        height: 381px;
+      }
+    }
+  }
+
+  @include responsive(code-example) {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    .code-example-container {
+      width: 100%;
+      text-align: right;
+      margin-top: 80px;
+
+      img {
+        width: 481px;
+        height: 381px;
+      }
+    }
+  }
+}
+
+// feature section designs finish here

@@ -1,5 +1,6 @@
 @import "../abstracts/variables";
-
+@import '../abstracts/mixins';
+@import '../abstracts/colors.scss';
 html,
 body,
 div,
@@ -87,6 +88,8 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-decoration: none;
+  transition: .2s linear all;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -123,4 +126,33 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+// html {
+//   font-size: 62.5%;
+//   overflow-x: hidden;
+//   scroll-behavior: smooth;
+//   scroll-padding-top: 7rem;
+
+//   &::-webkit-scrollbar {
+//       width: 1rem;
+//   }
+
+//   &::-webkit-scrollbar-track {
+//       background-color: transparent;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//       background-color: $secondary-color;
+//       border-radius: 50px;
+//   }
+// }
+
+.header__menu-item-link{
+  transition: .2s linear all;
+  color: $secondary-color;
+
+  &:hover{
+    color: white;
+  }
 }

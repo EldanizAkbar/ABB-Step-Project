@@ -12,7 +12,7 @@
     @include flex(initial, center);
     &:hover {
       & .header__logo-img {
-        background-image: url(../img/logo-hover.png);
+        background-image: url("../img/logo-hover.png");
       }
       & .header__logo-text {
         color: $white;
@@ -22,7 +22,7 @@
   &__logo-img {
     width: 43px;
     height: 41px;
-    background-image: url(../img/main-logo.png);
+    background-image: url("../img/main-logo.png");
   }
   &__logo-text {
     display: block;

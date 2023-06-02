@@ -5,7 +5,7 @@
 .feedback {
   background-color: rgb(73, 59, 78);
   background-blend-mode: initial;
-  background-image: url(../img/peopletalking-mobile.png);
+  background-image: url("../img/peopletalking-mobile.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: calcFluidSize(71, 61, 320, 480);
@@ -60,7 +60,7 @@
 
 @include mobiles {
   .feedback {
-    background-image: url(../img/peopletalking-mobiles.png);
+    background-image: url("../img/peopletalking-mobiles.png");
     background-position-y: 14px;
     &__title {
       line-height: calcFluidSize(45, 55, 320, 480);
@@ -109,7 +109,7 @@
 
 @include tablet {
   .feedback {
-    background-image: url(../img/peopletalking-desktop.png);
+    background-image: url("../img/peopletalking-desktop.png");
     &__subtitle {
       display: block;
     }
@@ -121,7 +121,7 @@
 
 @media (min-width: #{$tablet-width}) and (max-width: #{$mid-tablet-width}) {
   .feedback {
-    background-image: url(../img/peopletalking-tablet.png);
+    background-image: url("../img/peopletalking-tablet.png");
     &__subtitle {
       width: calcFluidSize(450, 665, 481, 768);
     }
@@ -133,7 +133,7 @@
 
 @include desktops {
   .feedback {
-    background-image: url(../img/peopletalking-desktop.png);
+    background-image: url("../img/peopletalking-desktop.png");
     &__title {
       font-size: calcFluidSize(42, 48, 993, 1200);
     }

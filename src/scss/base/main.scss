@@ -1,9 +1,11 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 @import 'reset';
-@import '../pages/index';   
+
 
 @import '../sections/header';
-@import '../sections/feedback';
 @import '../sections/home';
+@import '../sections/revolution';
+@import '../sections/feedback';
+@import '../sections/pricing';
 @import '../sections/container';

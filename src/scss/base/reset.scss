@@ -128,29 +128,9 @@ table {
   border-spacing: 0;
 }
 
-// html {
-//   font-size: 62.5%;
-//   overflow-x: hidden;
-//   scroll-behavior: smooth;
-//   scroll-padding-top: 7rem;
-
-//   &::-webkit-scrollbar {
-//       width: 1rem;
-//   }
-
-//   &::-webkit-scrollbar-track {
-//       background-color: transparent;
-//   }
-
-//   &::-webkit-scrollbar-thumb {
-//       background-color: $secondary-color;
-//       border-radius: 50px;
-//   }
-// }
-
 .header__menu-item-link{
   transition: .2s linear all;
-  color: $secondary-color;
+  color: $main-color;
 
   &:hover{
     color: white;

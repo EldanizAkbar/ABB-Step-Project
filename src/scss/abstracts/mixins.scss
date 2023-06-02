@@ -17,8 +17,32 @@
   }
 
   font-style: $style;
-  color: $color;
+  color:
+  
+  $color;
 }
+
+
+@mixin responsive($query) {
+  @if $query == desktop {
+    @media (max-width: 1200px) and (min-width: 993px){
+      @content;
+    }
+  } @else if $query == tablet {
+    @media (max-width: 992px) and (min-width: 481px) {
+      @content;
+    }
+  } @else if $query == mobile {
+    @media (min-width: 320px) and (max-width: 480px) {
+      @content;
+    }
+  } @else if $query == code-example {       // for setting width of code - example
+    @media (min-width: 481px) and (max-width: 768px) {
+      @content;
+    }
+  } 
+}
+
 
 @function calcFluidSize($f-min, $f-max, $v-min, $v-max) {
   $k: ($f-max - $f-min)/($v-max - $v-min);

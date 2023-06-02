@@ -11,7 +11,7 @@
     padding-bottom: calcFluidSize(71,61,320,480);
     &__title {
     font-family: 'Montserrat', sans-serif;
-    @include text ($primary-color, 700, capitalize, center);
+    @include text ($white, 700, capitalize, center);
     @include fontsize-padding (calcFluidSize(36,42,320,480), calcFluidSize(61,98,320,1200) calcFluidSize(17,22,320,480) 0);
     }
     &__companies-container {
@@ -34,7 +34,7 @@
         font-family: 'Lato', sans-serif;
         font-style: italic;
         line-height: 24px;
-        @include text ($primary-color, 600, none, center);
+        @include text ($white, 600, none, center);
         @include fontsize-padding (16px, 26px 0 0 0);
     }
     &__subtitle {
@@ -42,9 +42,9 @@
         color:  rgba(162, 145, 165, 0.8);
         font-size: 14px;
         text-align: center;
+        line-height: 21px;
         margin: calcFluidSize(62,119,481,1200) auto 0;
-        display: none;
-        width: calcFluidSize(665,850,769,1200);
+        max-width: calcFluidSize(665,850,769,1200);
     }
     &__line {
         margin: 0 auto;

@@ -3,7 +3,7 @@
 @import '../abstracts/variables';
 
 .header {
-    background-color: $header-bgc;
+    background-color: $black-lighter-h-bg;
     height: 103px;
     font-family: 'Montserrat', sans-serif;
     &__logo {
@@ -15,14 +15,14 @@
                 background-image: url(../../../dist/img/logo-hover.png);
             }
             & .header__logo-text {
-                color: $primary-color;
+                color: $white;
             }
         }
     }
     &__logo-img {
         width: 43px;
         height: 41px;
-        background-image: url(../../../dist/img/main\ logo.png);
+        background-image: url(../../../dist/img/main-logo.png);
     }
     &__logo-text {
         display: block;
@@ -30,14 +30,15 @@
         font-family: 'Lato', sans-serif;
         font-size: 24px;
         @include fontsize-padding(24px, 0 0 0 13px);
-        @include text($secondary-color, 700, uppercase);
+        @include text($main-color, 700, uppercase);
     }
+    
     &__menu {
         display: none;
         width: 100%;
         &_active {
             display: block;
-            background-color: $menu-bgc;
+            background-color: $black-light-burger-menu;
             z-index: 1;
             @include position(absolute, 103px, 0);
         }
@@ -48,7 +49,7 @@
     &__burger-line {
         width: 26px;
         height: 3px;
-        background-color: $primary-color;
+        background-color: $white;
         border-radius: 35px;
         margin-bottom: 6px;
         transition-duration: 1s;
@@ -82,11 +83,11 @@
         padding: 12px 25px;
     }
     &_color_purple {
-        background-color: $secondary-color;
-        color: $primary-color;
+        background-color: $main-color;
+        color: $white;
         &:hover {
-            background-color: $primary-color;
-            color: $secondary-color;
+            background-color: $white;
+            color: $main-color;
         }
     }
 }
@@ -105,16 +106,17 @@
             width: 100%;
             border-bottom: 2px solid rgb(63, 62, 62);
             padding: 26px 0;
-            font-size: 32px;
-            @include fontsize-padding(32px, 26px 0);
-            @include text($primary-color, 400, capitalize)
+            font-size: 26px;
+            @include fontsize-padding(26px, 26px 0);
+            @include text($white, 400, capitalize)
         }
         &__menu-item-link {
             display: block;
             padding: 15px 0 15px 33px;
+            color: white !important;
             &:hover {
-                color: $secondary-color;
-                border-left: 2px solid $secondary-color;
+                color: $main-color !important;
+                border-left: 2px solid $main-color;
             }
         }
     }
@@ -129,6 +131,7 @@
         &__logo-text {
             display: none;
         }
+        
     }
 }
 
@@ -139,7 +142,7 @@
         }
         &__menu-item {
             font-size: 16px;
-            @include text($secondary-color, 700, capitalize);
+            @include text($main-color, 700, capitalize);
             &_disabled {
                 display: none;
             }
@@ -175,7 +178,7 @@
         &__menu-item {
             width: auto;
             &:hover {
-                color: $primary-color;
+                color: $white;
             }
         }
     }
@@ -184,6 +187,7 @@
 
 @include desktops {
     .header {
+        background-color: black;
         &__menu {
             display: flex;
             width: auto;
@@ -192,7 +196,7 @@
         &__menu-item {
             padding-right: 48px;
             &:hover {
-                color: $primary-color;
+                color: $white;
             }
         }
         &__logo {
@@ -203,6 +207,7 @@
 
 @include large-desktop {
     .header {
+        background-color: black;
         &__menu {
             margin-left: 320px;
         }

@@ -1,6 +1,6 @@
-@import '../abstracts/variables';
-@import '../abstracts/colors';
-@import '../abstracts/mixins';
+@import "../abstracts/variables";
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
 
 .container {
   max-width: 100%;
@@ -27,10 +27,7 @@
       border: 1px solid $main-color;
       transition: all 0.4s;
       margin-top: -50% !important;
-      // position: absolute;
-      // top: 0;
-      // left: 40%;
-
+      
       &:hover {
         background-color: $white;
         color: $main-color;

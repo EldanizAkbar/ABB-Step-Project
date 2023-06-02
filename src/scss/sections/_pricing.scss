@@ -1,53 +1,104 @@
-@import '../abstracts/variables';
-@import '../abstracts/colors';
-@import '../abstracts/mixins';
+@import "../abstracts/variables";
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
 
 // pricing section designs start here
 .pricing-section {
-    background-image: url("../../../dist/img/last blur bg.png");
-    background-size: cover;
-    padding-top: 88px;
-    padding-bottom: 100px;
-  
-    .pricing-title {
-      text-align: center;
-      margin-bottom: 61px;
-      .subs {
-        @include customFont($fs-48, $ff-main, $fw-7, 50px, $white);
-      }
+  background-image: url("../../../dist/img/last blur bg.png");
+  background-size: cover;
+  padding-top: 88px;
+  padding-bottom: 100px;
+
+  .pricing-title {
+    text-align: center;
+    margin-bottom: 61px;
+    .subs {
+      @include customFont($fs-48, $ff-main, $fw-7, 50px, $white);
     }
-    .pricing-container {
-      display: flex;
-      column-gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-      align-items: center;
-      row-gap: 30px;
-  
-      .price__card {
-        text-align: center;
-        width: 257px;
-  
-        .price__card__header {
-          background-color: rgba(255, 255, 255, 0.11);
-          padding: 36px;
-          .price__card__header__text {
-            @include customFont($fs-24, $ff-main, $fw-4, 50px, $white);
-            text-transform: uppercase;
+  }
+  .pricing-container {
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 30px;
+
+    .price__card {
+      text-align: center;
+      width: 257px;
+
+      .price__card__header {
+        background-color: rgba(255, 255, 255, 0.11);
+        padding: 36px;
+        .price__card__header__text {
+          @include customFont($fs-24, $ff-main, $fw-4, 50px, $white);
+          text-transform: uppercase;
+        }
+      }
+      .price__card__content {
+        background-color: rgba(255, 255, 255, 0.06);
+        padding: 37px 10px;
+        .subs__price {
+          @include customFont($fs-60, $ff-main, $fw-7, 90px, $white);
+          margin-bottom: 20px;
+        }
+        .subs__time {
+          @include customFont($fs-14, $ff-main, $fw-4, 16px, $white);
+          text-transform: uppercase;
+          position: relative;
+
+          &:after {
+            display: block;
+            position: absolute;
+            content: "";
+            width: 4em;
+            height: 4px;
+            background-color: $main-color;
+            right: 38%;
+            top: 4em;
           }
         }
+        .subs__detail {
+          @include customFont($fs-16, $ff-main, $fw-4, 18px, $white);
+          margin-top: 73px;
+        }
+        .subs__button {
+          @include customFont($fs-15, $ff-main, $fw-4, 15px, $white);
+          padding: 15px 38px;
+          border-radius: 30px;
+          text-transform: uppercase;
+          margin-top: 48px;
+          background-color: rgba(255, 255, 255, 0.15);
+          border: none;
+          cursor: pointer;
+        }
+      }
+
+      &:first-child {
         .price__card__content {
-          background-color: rgba(255, 255, 255, 0.06);
-          padding: 37px 10px;
+          .subs__button {
+            margin-top: 66px;
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        width: 300px;
+
+        .price__card__header {
+          background-color: rgba(0, 0, 0, 0.18);
+          padding: 43px;
+        }
+        .price__card__content {
+          background-color: rgba(0, 0, 0, 0.1);
+          padding-top: 15px;
+          padding-bottom: 47px;
           .subs__price {
-            @include customFont($fs-60, $ff-main, $fw-7, 90px, $white);
-            margin-bottom: 20px;
+            @include customFont($fs-82, $ff-main, $fw-7, 90px, $white);
+            margin-bottom: 16px;
           }
           .subs__time {
-            @include customFont($fs-14, $ff-main, $fw-4, 16px, $white);
-            text-transform: uppercase;
-            position: relative;
-  
             &:after {
               display: block;
               position: absolute;
@@ -59,97 +110,43 @@
               top: 4em;
             }
           }
-          .subs__detail {
-            @include customFont($fs-16, $ff-main, $fw-4, 18px, $white);
-            margin-top: 73px;
-          }
           .subs__button {
             @include customFont($fs-15, $ff-main, $fw-4, 15px, $white);
             padding: 15px 38px;
             border-radius: 30px;
             text-transform: uppercase;
-            margin-top: 48px;
+            margin-top: 83px;
             background-color: rgba(255, 255, 255, 0.15);
             border: none;
             cursor: pointer;
           }
         }
-  
-        &:first-child {
-          .price__card__content {
-            .subs__button {
-              margin-top: 66px;
-            }
-          }
-        }
-  
-        &:nth-child(3) {
-          width: 300px;
-  
-          .price__card__header {
-            background-color: rgba(0, 0, 0, 0.18);
-            padding: 43px;
-          }
-          .price__card__content {
-            background-color: rgba(0, 0, 0, 0.1);
-            padding-top: 15px;
-            padding-bottom: 47px;
-            .subs__price {
-              @include customFont($fs-82, $ff-main, $fw-7, 90px, $white);
-              margin-bottom: 16px;
-            }
-            .subs__time {
-             
-  
-              &:after {
-                display: block;
-                position: absolute;
-                content: "";
-                width: 4em;
-                height: 4px;
-                background-color: $main-color;
-                right: 38%;
-                top: 4em;
-              }
-            }
-            .subs__button {
-              @include customFont($fs-15, $ff-main, $fw-4, 15px, $white);
-              padding: 15px 38px;
-              border-radius: 30px;
-              text-transform: uppercase;
-              margin-top: 83px;
-              background-color: rgba(255, 255, 255, 0.15);
-              border: none;
-              cursor: pointer;
-            }
-          }
-        }
-      }
-    }
-  
-    // pricing section responsive designs
-    @include responsive(tablet) {
-      .pricing-title {
-        padding: 10px;
-      
-        .subs {
-         font-size: $fs-42;
-        }
-      }
-  
-      .pricing-container{
-        padding: 10px;
-      }
-    }
-  
-    @include responsive(mobile) {
-      .pricing-title {
-      
-        .subs {
-         font-size: $fs-28;
-        }
       }
     }
   }
-  
-  // pricing section designs finish here
+
+  // pricing section responsive designs
+  @include responsive(tablet) {
+    .pricing-title {
+      padding: 10px;
+
+      .subs {
+        font-size: $fs-42;
+      }
+    }
+
+    .pricing-container {
+      padding: 10px;
+    }
+  }
+
+  @include responsive(mobile) {
+    .pricing-title {
+      .subs {
+        font-size: $fs-28;
+      }
+    }
+  }
+}
+
+// pricing section designs finish here

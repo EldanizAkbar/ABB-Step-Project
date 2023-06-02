@@ -1,221 +1,217 @@
-@import '../abstracts/colors';
-@import '../abstracts/mixins';
-@import '../abstracts/variables';
+@import "../abstracts/colors";
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
 
 .header {
-    background-color: $black-lighter-h-bg;
-    height: 103px;
-    font-family: $ff-main;
-    &__logo {
-        cursor: pointer;
-        padding-left: calcFluidSize(6, 15, 320, 480);
-        @include flex (initial, center);
-        &:hover {
-            & .header__logo-img {
-                background-image: url(../../../dist/img/logo-hover.png);
-            }
-            & .header__logo-text {
-                color: $white;
-            }
-        }
+  background-color: $black-lighter-h-bg;
+  height: 103px;
+  font-family: $ff-main;
+  &__logo {
+    cursor: pointer;
+    padding-left: calcFluidSize(6, 15, 320, 480);
+    @include flex(initial, center);
+    &:hover {
+      & .header__logo-img {
+        background-image: url(../../../dist/img/logo-hover.png);
+      }
+      & .header__logo-text {
+        color: $white;
+      }
     }
-    &__logo-img {
-        width: 43px;
-        height: 41px;
-        background-image: url(../../../dist/img/main-logo.png);
+  }
+  &__logo-img {
+    width: 43px;
+    height: 41px;
+    background-image: url(../../../dist/img/main-logo.png);
+  }
+  &__logo-text {
+    display: block;
+    padding-left: 13px;
+    font-family: $ff-secondary;
+    font-size: 24px;
+    @include fontsize-padding(24px, 0 0 0 13px);
+    @include text($main-color, 700, uppercase);
+  }
+  &__menu {
+    display: none;
+    width: 100%;
+    &_active {
+      display: block;
+      background-color: $black-light-burger-menu;
+      z-index: 1;
+      @include position(absolute, 103px, 0);
     }
-    &__logo-text {
-        display: block;
-        padding-left: 13px;
-        font-family: $ff-secondary;
-        font-size: 24px;
-        @include fontsize-padding(24px, 0 0 0 13px);
-        @include text($main-color, 700, uppercase);
+  }
+  &__burger {
+    margin-right: calcFluidSize(6, 15, 320, 480);
+  }
+  &__burger-line {
+    width: 26px;
+    height: 3px;
+    background-color: $white;
+    border-radius: 35px;
+    margin-bottom: 6px;
+    transition-duration: 1s;
+    &_small {
+      width: 20px;
+      margin-left: 6px;
+      transition-duration: 0.8s;
     }
-    &__menu {
-        display: none;
-        width: 100%;
-        &_active {
-            display: block;
-            background-color: $black-light-burger-menu;
-            z-index: 1;
-            @include position(absolute, 103px, 0);
-        }
+    &_last {
+      margin-bottom: 0;
     }
-    &__burger {
-        margin-right: calcFluidSize(6, 15, 320, 480);
+    &_direction_right {
+      transform: rotateZ(45deg);
     }
-    &__burger-line {
-        width: 26px;
-        height: 3px;
-        background-color: $white;
-        border-radius: 35px;
-        margin-bottom: 6px;
-        transition-duration: 1s;
-        &_small {
-            width: 20px;
-            margin-left: 6px;
-            transition-duration: 0.8s;
-        }
-        &_last{
-            margin-bottom: 0;
-        }
-        &_direction_right {
-            transform: rotateZ(45deg);
-        }
-        &_direction_left-up {
-            transform: translateY(-9px) rotateZ(-45deg);
-        }
-        &_invisible {
-            opacity: 0;
-        }
+    &_direction_left-up {
+      transform: translateY(-9px) rotateZ(-45deg);
     }
+    &_invisible {
+      opacity: 0;
+    }
+  }
 }
 
 .button {
-    cursor: pointer;
-    text-transform: capitalize;
-    font-weight: 600;
-    border-radius: 30px;
-    &_type_buy {
-        font-size: 16px;
-        padding: 12px 25px;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 600;
+  border-radius: 30px;
+  &_type_buy {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+  &_color_purple {
+    background-color: $main-color;
+    color: $white;
+    &:hover {
+      background-color: $white;
+      color: $main-color;
     }
-    &_color_purple {
-        background-color: $main-color;
-        color: $white;
-        &:hover {
-            background-color: $white;
-            color: $main-color;
-        }
-    }
+  }
 }
 
 @include mobile {
-    .header {
-        &__logo-text {
-            display: none;
-        }
+  .header {
+    &__logo-text {
+      display: none;
     }
+  }
 }
 
-@include mobiles{
-    .header {
-        &__menu {
-            
-            width: 90%;
-            margin-left: 4.8%;
-          
-        }
-
-        &__menu-item {
-            width: 100%;
-            border-bottom: 2px solid rgb(63, 62, 62);
-            padding: 26px 0;
-            font-size: 26px;
-            @include fontsize-padding(26px, 26px 0);
-            @include text($white, 400, capitalize)
-        }
-        &__menu-item-link {
-            display: block;
-            padding: 15px 0 15px 33px;  
-            color: white !important;
-            &:hover {
-                color: $main-color !important;
-                border-left: 3px solid $main-color;
-            }
-        }
+@include mobiles {
+  .header {
+    &__menu {
+      width: 90%;
+      margin-left: 4.8%;
     }
+
+    &__menu-item {
+      width: 100%;
+      border-bottom: 2px solid rgb(63, 62, 62);
+      padding: 26px 0;
+      font-size: 26px;
+      @include fontsize-padding(26px, 26px 0);
+      @include text($white, 400, capitalize);
+    }
+    &__menu-item-link {
+      display: block;
+      padding: 15px 0 15px 33px;
+      color: white !important;
+      &:hover {
+        color: $main-color !important;
+        border-left: 3px solid $main-color;
+      }
+    }
+  }
 }
 
 @include small-mobile {
-    .header {
-        width: 320px;
-        &__menu {
-            width: 320px;
-        }
-        &__logo-text {
-            display: none;
-        }
-        
+  .header {
+    width: 320px;
+    &__menu {
+      width: 320px;
     }
+    &__logo-text {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: #{$tablet-width}) {
-    .header {
-        &__burger {
-            display: none;
-        }
-        &__menu-item {
-            font-size: 16px;
-            @include text($main-color, 700, capitalize);
-            &_disabled {
-                display: none;
-            }
-        }
+  .header {
+    &__burger {
+      display: none;
     }
-    .button {
-        &_type_buy {
-            padding: 12px 35px;
-        }
+    &__menu-item {
+      font-size: 16px;
+      @include text($main-color, 700, capitalize);
+      &_disabled {
+        display: none;
+      }
     }
+  }
+  .button {
+    &_type_buy {
+      padding: 12px 35px;
+    }
+  }
 }
 
 @include tablet {
-    .button {
-        &_type_buy {
-            margin-top: 24px;
-            margin-right: 10px;
-        }
+  .button {
+    &_type_buy {
+      margin-top: 24px;
+      margin-right: 10px;
     }
-    .header {
-        height: 118px;
-        &__logo {
-            padding-left: 10px;
-            margin-top: 22px;
-        }
-        &__menu {
-            width: 100%;
-            padding: 0 calcFluidSize(0,115,481,982);
-            box-sizing: border-box;
-            @include flex(initial, initial, space-evenly);
-            @include position(absolute, 84px, 0);
-        }
-        &__menu-item {
-            width: auto;
-            &:hover {
-                color: $white;
-            }
-        }
+  }
+  .header {
+    height: 118px;
+    &__logo {
+      padding-left: 10px;
+      margin-top: 22px;
     }
-
+    &__menu {
+      width: 100%;
+      padding: 0 calcFluidSize(0, 115, 481, 982);
+      box-sizing: border-box;
+      @include flex(initial, initial, space-evenly);
+      @include position(absolute, 84px, 0);
+    }
+    &__menu-item {
+      width: auto;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
 }
 
 @include desktops {
-    .header {
-        background-color: black;
-        &__menu {
-            display: flex;
-            width: auto;
-            margin-left: calcFluidSize(115,320,993,1200);;
-        }
-        &__menu-item {
-            padding-right: 48px;
-            &:hover {
-                color: $white;
-            }
-        }
-        &__logo {
-            padding-left: 0;
-        }
+  .header {
+    background-color: black;
+    &__menu {
+      display: flex;
+      width: auto;
+      margin-left: calcFluidSize(115, 320, 993, 1200);
     }
+    &__menu-item {
+      padding-right: 48px;
+      &:hover {
+        color: $white;
+      }
+    }
+    &__logo {
+      padding-left: 0;
+    }
+  }
 }
 
 @include large-desktop {
-    .header {
-        background-color: black;
-        &__menu {
-            margin-left: 320px;
-        }
+  .header {
+    background-color: black;
+    &__menu {
+      margin-left: 320px;
     }
+  }
 }

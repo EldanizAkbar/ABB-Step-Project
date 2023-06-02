@@ -17,17 +17,14 @@
   }
 
   font-style: $style;
-  color:
-  
-  $color;
+  color: $color;
 }
-
 
 //responsive mixin for revolution and pricing sections
 
 @mixin responsive($query) {
   @if $query == desktop {
-    @media (max-width: 1200px) and (min-width: 993px){
+    @media (max-width: 1200px) and (min-width: 993px) {
       @content;
     }
   } @else if $query == tablet {
@@ -38,87 +35,85 @@
     @media (min-width: 320px) and (max-width: 480px) {
       @content;
     }
-  } @else if $query == code-example {       // for setting width of code - example
+  } @else if $query == code-example {
+    // for setting width of code - example
     @media (min-width: 481px) and (max-width: 768px) {
       @content;
     }
-  } 
+  }
 }
-
-
-
 
 // responsive mixins for header, home and feedback sections
 
 @function calcFluidSize($f-min, $f-max, $v-min, $v-max) {
-  $k: ($f-max - $f-min)/($v-max - $v-min);
+  $k: ($f-max - $f-min)/ ($v-max - $v-min);
   $b: $f-min - $k * $v-min;
 
   $b: $b * 1px;
 
-  @return calc( #{$k} * 100vw + #{$b} );
+  @return calc(#{$k} * 100vw + #{$b});
 }
 
 @mixin mobile {
   @media (min-width : #{$mobile-width}) and (max-width : #{$large-mobile-width - 1px}) {
-      @content;
+    @content;
   }
 }
 
 @mixin large-mobile {
   @media (min-width : #{$large-mobile-width}) and (max-width : #{$tablet-width - 1px}) {
-      @content;
+    @content;
   }
 }
 
 @mixin tablet {
   @media (min-width : #{$tablet-width}) and (max-width : #{$desktop-width - 1px}) {
-      @content;
+    @content;
   }
 }
 
 @mixin desktop {
   @media (min-width : #{$desktop-width}) and (max-width : #{$large-desktop-width - 1px}) {
-      @content;
+    @content;
   }
 }
 
 @mixin large-desktop {
   @media (min-width : #{$large-desktop-width}) {
-      @content;
+    @content;
   }
 }
 
 @mixin small-mobile {
   @media (max-width : #{$mobile-width - 1px}) {
-      @content;
+    @content;
   }
 }
 
 @mixin desktops {
   @media (min-width : #{$desktop-width}) {
-      @content;
+    @content;
   }
 }
 
 @mixin mobiles {
   @media (max-width : #{$tablet-width - 1px}) {
-      @content;
+    @content;
   }
 }
 @mixin tablet-desktop {
   @media (min-width : #{$tablet-width}) and (max-width: #{$large-desktop-width - 1px}) {
-      @content;
+    @content;
   }
 }
 
-@mixin text ($color, $font-weight, $text-transform:none, $text-align:left) {
+@mixin text($color, $font-weight, $text-transform: none, $text-align: left) {
   color: $color;
   text-align: $text-align;
   text-transform: $text-transform;
   font-weight: $font-weight;
 }
-@mixin flex ($flex-wrap, $align-items: initial, $justify-content: initial) {
+@mixin flex($flex-wrap, $align-items: initial, $justify-content: initial) {
   display: flex;
   flex-wrap: $flex-wrap;
   justify-content: $justify-content;
@@ -129,16 +124,13 @@
   top: $top;
   left: $left;
 }
-@mixin fontsize-padding ($font-size, $padding) {
+@mixin fontsize-padding($font-size, $padding) {
   font-size: $font-size;
   padding: $padding;
 }
-@mixin  grid ($grid-template-columns, $grid-column-gap, $grid-row-gap) {
+@mixin grid($grid-template-columns, $grid-column-gap, $grid-row-gap) {
   display: grid;
   grid-template-columns: $grid-template-columns;
   grid-column-gap: $grid-column-gap;
   grid-row-gap: $grid-row-gap;
-
 }
-
-

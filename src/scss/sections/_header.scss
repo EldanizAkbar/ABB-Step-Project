@@ -5,7 +5,7 @@
 .header {
     background-color: $black-lighter-h-bg;
     height: 103px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $ff-main;
     &__logo {
         cursor: pointer;
         padding-left: calcFluidSize(6, 15, 320, 480);
@@ -27,12 +27,11 @@
     &__logo-text {
         display: block;
         padding-left: 13px;
-        font-family: 'Lato', sans-serif;
+        font-family: $ff-secondary;
         font-size: 24px;
         @include fontsize-padding(24px, 0 0 0 13px);
         @include text($main-color, 700, uppercase);
     }
-    
     &__menu {
         display: none;
         width: 100%;
@@ -102,6 +101,13 @@
 
 @include mobiles{
     .header {
+        &__menu {
+            
+            width: 90%;
+            margin-left: 4.8%;
+          
+        }
+
         &__menu-item {
             width: 100%;
             border-bottom: 2px solid rgb(63, 62, 62);
@@ -112,11 +118,11 @@
         }
         &__menu-item-link {
             display: block;
-            padding: 15px 0 15px 33px;
+            padding: 15px 0 15px 33px;  
             color: white !important;
             &:hover {
                 color: $main-color !important;
-                border-left: 2px solid $main-color;
+                border-left: 3px solid $main-color;
             }
         }
     }

@@ -5,16 +5,16 @@
 .home {
     background-image: url('../../../dist/img/fork-mobile.png');
     background-size: cover;
-    background-position: center 80%;
+    background-position: center 100%;
     height: 850px;  
     background-repeat: no-repeat;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $ff-main;
     &__title {
         @include fontsize-padding(calcFluidSize(48,82,320,1200), calcFluidSize(43,101,320,480) 0 calcFluidSize(20,35,320,480));
         @include text($white, 700, capitalize, center)
     }
     &__slogan {
-        font-family: 'Lato', sans-serif;
+        font-family: $ff-secondary;
         line-height: 25px;
         padding: 0 calcFluidSize(20,40,320,480) 0; 
         font-size: calcFluidSize(18,30,320,1200);

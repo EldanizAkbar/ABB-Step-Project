@@ -23,6 +23,8 @@
 }
 
 
+//responsive mixin for revolution and pricing sections
+
 @mixin responsive($query) {
   @if $query == desktop {
     @media (max-width: 1200px) and (min-width: 993px){
@@ -43,6 +45,10 @@
   } 
 }
 
+
+
+
+// responsive mixins for header, home and feedback sections
 
 @function calcFluidSize($f-min, $f-max, $v-min, $v-max) {
   $k: ($f-max - $f-min)/($v-max - $v-min);
